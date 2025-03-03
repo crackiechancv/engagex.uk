@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Apply custom font to all text */
+@layer base {
+  html {
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add text shadow to all text elements */
+h1, h2, h3, h4, h5, h6, p, span, a, label, button {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Special shadow for white text */
+.text-white {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced shadow for headings with Apple-like refinement */
+h1, h2, h3 {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  letter-spacing: -0.025em;
+}
+
+/* Glowing effect for gradient text */
+.bg-clip-text {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Chat messages don't need shadows */
+.bg-gray-100 p, .bg-blue-500 p {
+  text-shadow: none;
+}
+
+/* Enhanced shadow effect for images with depth */
+img {
+  box-shadow: 
+    0 35px 60px -15px rgba(0, 0, 0, 0.8),
+    0 25px 35px -10px rgba(0, 0, 0, 0.6),
+    0 15px 25px -5px rgba(0, 0, 0, 0.4),
+    0 0 50px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect for images with smooth transition */
+img:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Exception for logo images */
+nav img, footer img {
+  box-shadow: none;
+  transform: none;
+}
+nav img:hover, footer img:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Enhanced button styles with floating effect and Apple-like refinement */
+button, 
+a[class*="bg-"], 
+button[class*="bg-"], 
+a.rounded-full,
+button.rounded-full {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+/* Hover effect for buttons with smooth transition */
+button:hover, 
+a[class*="bg-"]:hover, 
+button[class*="bg-"]:hover,
+a.rounded-full:hover,
+button.rounded-full:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 15px 20px -3px rgba(0, 0, 0, 0.4),
+    0 8px 8px -2px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Active state for buttons */
+button:active, 
+a[class*="bg-"]:active, 
+button[class*="bg-"]:active,
+a.rounded-full:active,
+button.rounded-full:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 8px 12px -3px rgba(0, 0, 0, 0.3),
+    0 3px 4px -2px rgba(0, 0, 0, 0.2),
+    0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Exception for chat quick action buttons */
+.bg-gray-50 {
+  box-shadow: none !important;
+  transform: none !important;
+}
+.bg-gray-50:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Apple-inspired glass morphism */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+}
+
+/* Smooth reveal animation for sections */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced input fields with Apple-like styling */
+input, textarea {
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus, textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth parallax effect */
+.parallax {
+  transform: translateZ(0);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced card hover effects */
+.hover-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.4),
+    0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Social buttons animation */
+.social-icon {
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+.social-icon svg {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(3deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(-3deg);
+  }
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4))
+           drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+  }
+  to {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))
+           drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+  }
+}
+
+.social-icon:hover svg {
+  animation: pulse 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))
+           drop-shadow(0 0 16px rgba(255, 255, 255, 0.4));
+  }
+  to {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 1))
+           drop-shadow(0 0 24px rgba(255, 255, 255, 0.8));
+  }
+}
+
+/* Enhanced text button styling */
+.text-button {
+  position: relative;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.text-button:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.text-button:active {
+  transform: none;
+  box-shadow: none;
+}
+
+.text-button::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.text-button:hover::after {
+  transform: scaleX(1);
+}
+
+/* Add flickering glow effect for the X */
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 0 4px #63a5fd,
+      0 0 11px #63a5fd,
+      0 0 19px #63a5fd,
+      0 0 40px #2196f3,
+      0 0 80px #2196f3,
+      0 0 90px #2196f3,
+      0 0 100px #2196f3,
+      0 0 150px #2196f3;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+.flicker-glow {
+  animation: flicker 2s infinite alternate;
+}
